@@ -499,6 +499,9 @@ img { max-width: 100%; display: block; }
 /* ---------- Utilities ---------- */
 .text-center { text-align: center; }
 .mt-0 { margin-top: 0; }
+.mt-24 { margin-top: 24px; }
 .max-w-prose { max-width: 640px; }
 .stack { display: flex; flex-direction: column; gap: 8px; }
 .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.hero__actions--center { justify-content: center; }
+.btn-outline--on-dark { border-color: #fff; color: #fff; }
