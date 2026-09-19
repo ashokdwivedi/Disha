@@ -7,6 +7,9 @@
 <meta name="description" content="Primary, middle and secondary school stages for Indian students, with age-appropriate free learning resources.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -47,8 +50,10 @@
     </div>
     <div class="hero__media">
       <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80"
+           srcset="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80 600w, https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80 900w, https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80 1200w"
+           sizes="(max-width: 860px) 100vw, 500px"
            data-alt-en="Young children learning together in a classroom" data-alt-hi="कक्षा में साथ पढ़ते छोटे बच्चे"
-           alt="Young children learning together in a classroom" loading="eager">
+           alt="Young children learning together in a classroom" loading="eager" fetchpriority="high" width="1200" height="900">
     </div>
   </section>
 
@@ -168,8 +173,6 @@
   </div>
 </footer>
 
-<script src="assets/js/i18n.js" defer></script>
-<script src="assets/js/main.js" defer></script>
-<script src="assets/js/roadmap.js" defer></script>
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 /* Disha — career guidance site for Indian students
-   Shared design system for all pages. Plain CSS, no framework. */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+   Shared design system for all pages. Plain CSS, no framework.
+   Font loading moved to <link> tags in each page's <head> (see optimization
+   notes in tasks/todo.md) so the fonts CSS fetches in parallel with this
+   file instead of being discovered only after it. */
 
 :root {
   --color-primary: #1f2a63;
