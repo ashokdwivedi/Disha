@@ -10,32 +10,32 @@
 /* Design tokens -> utilities (bg-primary, rounded-lg, shadow-md, font-heading,
    animate-fade-up, ...). */
 @theme {
-  --color-primary: #4c3be8;
-  --color-primary-dark: #140f4d;
-  --color-primary-soft: #eeecff;
+  --color-primary: #0a58c9;
+  --color-primary-dark: #0a2a5e;
+  --color-primary-soft: #dbeeff;
   --color-accent: #ff9f1c;
-  --color-accent-dark: #b45309;
+  --color-accent-dark: #9a4a00;
   --color-accent-soft: #fff1dc;
-  --color-bg: #f8f7ff;
+  --color-bg: #d6ecfb;
   --color-surface: #ffffff;
-  --color-text: #1b1e3b;
-  --color-text-muted: #565b7d;
-  --color-border: #e6e4f7;
-  --color-science: #166a4c;
-  --color-science-soft: #dff5ea;
-  --color-commerce: #9b2f83;
-  --color-commerce-soft: #f8e4f3;
-  --color-arts: #b83a0c;
-  --color-arts-soft: #fde6d9;
+  --color-text: #0f2a43;
+  --color-text-muted: #3f5a75;
+  --color-border: #cfe5f6;
+  --color-science: #0d7a58;
+  --color-science-soft: #d9f4e8;
+  --color-commerce: #7a35b5;
+  --color-commerce-soft: #ecdff8;
+  --color-arts: #b03a0a;
+  --color-arts-soft: #ffe4d6;
 
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
 
-  --shadow-sm: 0 1px 2px rgb(20 15 77 / 0.05), 0 4px 14px rgb(20 15 77 / 0.05);
-  --shadow-md: 0 2px 4px rgb(20 15 77 / 0.04), 0 14px 34px rgb(20 15 77 / 0.1);
-  --shadow-lg: 0 4px 8px rgb(20 15 77 / 0.05), 0 32px 64px rgb(20 15 77 / 0.18);
+  --shadow-sm: 0 1px 2px rgb(10 42 94 / 0.05), 0 4px 14px rgb(10 42 94 / 0.05);
+  --shadow-md: 0 2px 4px rgb(10 42 94 / 0.04), 0 14px 34px rgb(10 42 94 / 0.1);
+  --shadow-lg: 0 4px 8px rgb(10 42 94 / 0.05), 0 32px 64px rgb(10 42 94 / 0.18);
   --shadow-glow: 0 10px 28px rgb(255 140 30 / 0.45);
 
   --container-site: 1120px;
@@ -64,8 +64,8 @@
 
 @layer base {
   :root {
-    --gradient-brand: linear-gradient(135deg, #3f2fd8 0%, #6a3df0 55%, #9b3fe0 100%);
-    --gradient-ink: linear-gradient(120deg, #140f4d 15%, #4c3be8 70%, #7c3aed 100%);
+    --gradient-brand: linear-gradient(135deg, #0a3fa8 0%, #0a58c9 55%, #1270cd 100%);
+    --gradient-ink: linear-gradient(120deg, #0a2a5e 10%, #0a58c9 65%, #1270cd 100%);
     --gradient-sun: linear-gradient(135deg, #ffbd3a 0%, #ff8a1f 100%);
   }
 
@@ -82,18 +82,21 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  /* Soft colour mesh behind the top of every page. */
+  /* Sky: a blue gradient with a warm sun glow and soft white clouds. */
   body::before {
     content: "";
     position: absolute;
     inset: 0 0 auto 0;
-    height: 1000px;
+    height: 1100px;
     z-index: -1;
     pointer-events: none;
     background:
-      radial-gradient(620px 420px at 88% 6%, rgb(124 58 237 / 0.2), transparent 70%),
-      radial-gradient(540px 400px at 6% 22%, rgb(255 159 28 / 0.18), transparent 70%),
-      radial-gradient(760px 520px at 50% -4%, rgb(76 59 232 / 0.12), transparent 70%);
+      radial-gradient(480px 320px at 9% 6%, rgb(255 251 232 / 0.85), rgb(255 240 200 / 0.35) 40%, transparent 72%),
+      radial-gradient(420px 150px at 80% 11%, rgb(255 255 255 / 0.9), transparent 70%),
+      radial-gradient(320px 110px at 63% 19%, rgb(255 255 255 / 0.7), transparent 70%),
+      radial-gradient(480px 170px at 18% 36%, rgb(255 255 255 / 0.6), transparent 70%),
+      radial-gradient(540px 200px at 92% 44%, rgb(255 255 255 / 0.55), transparent 70%),
+      linear-gradient(180deg, #c4e8fc 0%, #cdeafb 50%, #d6ecfb 100%);
   }
 
   h1, h2, h3, h4 {
@@ -132,7 +135,7 @@
     outline-offset: 3px;
     border-radius: 8px;
   }
-  ::selection { background: rgb(124 58 237 / 0.22); }
+  ::selection { background: rgb(18 112 205 / 0.22); }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
