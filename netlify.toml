@@ -1,0 +1,19 @@
+# Static site. Only the pages + assets are copied into dist/ and published, so
+# node_modules (Tailwind dev tooling) is never deployed.
+# assets/css/tailwind.css is a committed build artifact: after editing
+# tailwind.src.css / components.css / any HTML classes, run `npm run build:css`
+# and commit the result before pushing.
+[build]
+  command = "mkdir -p dist && cp -R *.html assets dist/"
+  publish = "dist"
+
+# Real response headers (not possible on GitHub Pages). CSP mirrors the <meta>
+# tag in each page, plus frame-ancestors which only works as a header.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

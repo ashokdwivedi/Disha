@@ -1,0 +1,26 @@
+{
+  "name": "career-guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i assets/css/tailwind.src.css -o assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i assets/css/tailwind.src.css -o assets/css/tailwind.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashokdwivedi/disha-career-guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ashokdwivedi/disha-career-guide/issues"
+  },
+  "homepage": "https://github.com/ashokdwivedi/disha-career-guide#readme",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
