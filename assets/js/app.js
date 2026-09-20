@@ -119,3 +119,39 @@
     init();
   }
 })();
+
+// Fade/slide sections in as they scroll into view. Only elements that start
+// below the fold get the hidden state (no flash), and visitors without JS or
+// with reduced motion always see the full content.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  function init() {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        observer.unobserve(el);
+        el.classList.add('is-visible');
+        // Drop the helper classes once the transition is done so hover
+        // transitions on cards go back to their own timing.
+        setTimeout(function () { el.classList.remove('reveal', 'is-visible'); }, 1400);
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(
+      '.pillar, .card, .crossover__from, .roadmap__stage, .cta-band, .section .eyebrow, .section h2'
+    ).forEach(function (el) {
+      if (el.getBoundingClientRect().top < window.innerHeight) return;
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
